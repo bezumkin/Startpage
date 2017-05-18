@@ -7,16 +7,16 @@
                          srcset="/assets/screenshots/{$link.id}/small@2x.jpg?{$link.updatedon | strtotime} 2x">
                 {/if}
             </div>
+            <div class="link-header">
+                <span class="update fa fa-refresh"></span>
+                <span class="remove fa fa-trash-o"></span>
+            </div>
+            <div class="link-footer">
+                {$link.domain}
+            </div>
+            <div class="link-loading">
+                <div class="fa fa-circle-o-notch fa-spin"></div>
+            </div>
         </a>
-        <div class="link-header">
-            <span class="update fa fa-refresh"></span>
-            <span class="remove fa fa-trash-o"></span>
-        </div>
-        <div class="link-footer">
-            {$link.domain}
-        </div>
-        <div class="link-loading">
-            <div class="fa fa-circle-o-notch fa-spin"></div>
-        </div>
     </div>
 </div>

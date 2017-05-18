@@ -6,7 +6,7 @@ class Startpage
     public $modx;
     /** @var pdoFetch $pdoTools */
     public $pdoTools;
-    const assets_version = '1.06';
+    const assets_version = '1.07';
 
 
     /**

@@ -4,7 +4,8 @@ define(['app', 'sortable', 'autocomplete'], function (App, Sortable, Autocomplet
 
     App.Links = {
         init: function () {
-            $(document).on('click', '.link-header span', function () {
+            $(document).on('click', '.link-header span', function (e) {
+                e.preventDefault();
                 var $this = $(this);
                 var $link = $this.parents('.link');
                 var id = $link.data('id');
