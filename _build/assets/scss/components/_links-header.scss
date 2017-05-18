@@ -1,0 +1,26 @@
+#links-header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  #search, #weather {
+    width: 45%;
+  }
+  .hidden {
+    display: none;
+  }
+  #dropdown-trigger, #city-trigger {
+    cursor: pointer;
+    border-bottom: 1px dashed #555;
+  }
+  @include media-breakpoint-down(md) {
+    flex-wrap: wrap;
+    #search, #weather {
+      width: 100%;
+      text-align: center;
+    }
+    #weather { margin-top: 20px; }
+  }
+}
+@import "links-header-search";
+@import "links-header-weather";

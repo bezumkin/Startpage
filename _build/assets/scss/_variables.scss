@@ -1,0 +1,67 @@
+$grid-breakpoints: (
+        xs: 0,
+        sm: 321px,
+        md: 768px,
+        lg: 1024px,
+        xl: 1280px
+) !default;
+
+$container-max-widths: (
+        sm: 100%,
+        md: 100%,
+        lg: 100%,
+        xl: 1230px
+) !default;
+
+$font-family-sans-serif: 'A Futura Round', Arial, sans-serif !default;
+$font-family-base: $font-family-sans-serif !default;
+
+$gray-dark: #293034 !default;
+$link-color: #1abc9c !default;
+
+$brand-primary: #1abc9c !default;
+$brand-success: #5cb85c !default;
+$brand-info: #5bc0de !default;
+$brand-warning: #f0ad4e !default;
+$brand-danger: #d9534f !default;
+$brand-inverse: $gray-dark !default;
+
+$input-border-focus: #1abc9c !default;
+$input-box-shadow-focus: rgba(26, 188, 156, .6) !default;
+$custom-control-focus-indicator-box-shadow: 0 0 0 .075rem #fff, 0 0 0 .2rem $link-color !default;
+
+$modal-backdrop-bg: #1abc9c !default;
+$modal-backdrop-opacity: .82;
+$modal-lg: 800px !default;
+$modal-md: 600px !default;
+$modal-sm: 300px !default;
+
+$btn-success-bg: #1abc9c !default;
+$btn-secondary-bg: #fff !default;
+$btn-danger-bg: #e74c3c !default;
+$btn-padding-y: 9px !default;
+$btn-padding-x: 17px !default;
+
+$alert-warning-bg: #f7f1da !default;
+$alert-warning-text: $gray-dark !default;
+$alert-border-radius: 6px !default;
+
+//$sidebar-width: 237px;
+//$sidebar-height: 972px;
+$nav-pills-active-link-bg: $link-color;
+$nav-pills-border-radius: 6px;
+
+$modal-dialog-sm-up-margin-y: 30px !default;
+$modal-dialog-margin: auto !default;
+
+$custom-file-text: (
+        placeholder: (),
+        button-label: ()
+) !default;
+
+//$nav-link-padding: 5px 20px;
+/*
+$tooltip-max-width: 300px;
+$tooltip-color: #999782;
+$tooltip-bg: #fff;
+*/

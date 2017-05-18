@@ -1,0 +1,36 @@
+$fa-font-path: '../../fonts';
+//noinspection CssUnknownTarget
+@import '../../node_modules/font-awesome/scss/font-awesome.scss';
+
+@font-face {
+  font-family: 'A Futura Round';
+  src: url('../../fonts/AFuturaRound.eot?#iefix') format('embedded-opentype'),
+  url('../../fonts/AFuturaRound.woff') format('woff'),
+  url('../../fonts/AFuturaRound.ttf') format('truetype'),
+  url('../../fonts/AFuturaRound.svg#AFuturaRound') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'A Futura Round';
+  src: url('../../fonts/AFuturaRoundDemi.eot?#iefix') format('embedded-opentype'),
+  url('../../fonts/AFuturaRoundDemi.woff') format('woff'),
+  url('../../fonts/AFuturaRoundDemi.ttf') format('truetype'),
+  url('../../fonts/AFuturaRoundDemi.svg#AFuturaRoundDemi') format('svg');
+  font-weight: bold;
+  font-style: normal;
+}
+/*
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Open Sans'), local('OpenSans'), url(../../fonts/opensans-regular.ttf) format('ttf');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Open Sans Bold'), local('OpenSans-Bold'), url(../../fonts/opensans-bold.ttf) format('ttf');
+}
+ */

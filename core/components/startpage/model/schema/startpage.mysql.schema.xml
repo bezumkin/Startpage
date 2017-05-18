@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model package="startpage" baseClass="xPDOObject" platform="mysql" defaultEngine="MyISAM" phpdoc-package="startpage"
+       version="1.1">
+
+    <object class="spLink" table="sp_links" extends="xPDOSimpleObject">
+        <field key="scheme" dbtype="varchar" precision="10" phptype="string" null="false"/>
+        <field key="link" dbtype="varchar" precision="100" phptype="string" null="false"/>
+        <field key="domain" dbtype="varchar" precision="100" phptype="string" null="false"/>
+
+        <field key="screenshots" dbtype="tinyint" precision="1" phptype="boolean" null="true" default="0"/>
+        <field key="update" dbtype="tinyint" precision="1" phptype="boolean" null="true" default="1"/>
+
+        <field key="createdon" dbtype="timestamp" phptype="string" null="false" default="0000-00-00 00:00:00"/>
+        <field key="updatedon" dbtype="timestamp" phptype="string" null="true" default="0000-00-00 00:00:00"/>
+
+        <index alias="link" name="link" primary="false" unique="true" type="BTREE">
+            <column key="link" length="" collation="A" null="false"/>
+        </index>
+        <index alias="update" name="active" primary="false" unique="false" type="BTREE">
+            <column key="update" length="" collation="A" null="false"/>
+        </index>
+    </object>
+
+    <object class="spUserLink" table="sp_user_links" extends="xPDOObject">
+        <field key="link" dbtype="int" precision="10" phptype="int" null="false" pk="true"/>
+        <field key="user" dbtype="int" precision="10" phptype="int" null="false" pk="true"/>
+        <field key="rank" dbtype="int" precision="10" phptype="int" null="true" default="0"/>
+        <field key="createdon" dbtype="timestamp" phptype="string" null="false" default="0000-00-00 00:00:00"/>
+
+        <index alias="PRIMARY" name="PRIMARY" primary="true" unique="true" type="BTREE">
+            <column key="link" length="" collation="A" null="false"/>
+            <column key="user" length="" collation="A" null="false"/>
+        </index>
+    </object>
+
+    <object class="spCity" table="sp_cities" extends="xPDOObject">
+        <field key="id" dbtype="int" precision="10" phptype="int" null="false" pk="true"/>
+        <field key="city" dbtype="varchar" precision="100" phptype="string" null="false"/>
+        <field key="city_en" dbtype="varchar" precision="100" phptype="string" null="false"/>
+        <field key="active" dbtype="tinyint" precision="1" phptype="boolean" null="true" default="1"/>
+
+        <index alias="PRIMARY" name="PRIMARY" primary="true" unique="true" type="BTREE">
+            <column key="id" length="" collation="A" null="false"/>
+        </index>
+        <index alias="city" name="city" primary="false" unique="false" type="BTREE">
+            <column key="city" length="" collation="A" null="false"/>
+            <column key="city_en" length="" collation="A" null="false"/>
+        </index>
+        <index alias="active" name="active" primary="false" unique="false" type="BTREE">
+            <column key="active" length="" collation="A" null="false"/>
+        </index>
+    </object>
+
+</model>

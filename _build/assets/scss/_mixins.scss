@@ -1,0 +1,60 @@
+@mixin providers {
+  a {
+    display: inline-block;
+    width: 19%;
+    margin-right: 1%;
+    height: 50px;
+    line-height: 50px;
+    font-size: 30px;
+    text-align: center;
+    text-decoration: none;
+    &:last-child {
+      margin-right: 0;
+    }
+    &:hover {
+      opacity: .7;
+    }
+    &:after {
+      font-family: 'FontAwesome';
+      color: #fff;
+    }
+    &.facebook {
+      background: #305093;
+      &:after {
+        content: '\f09a';
+      }
+    }
+    &.google {
+      background: #cd4f30;
+      &:after {
+        content: '\f0d5';
+      }
+    }
+    &.twitter {
+      background: #00a7ec;
+      &:after {
+        content: '\f099';
+      }
+    }
+    &.vkontakte {
+      background: #3f6895;
+      &:after {
+        content: '\f189';
+      }
+    }
+    &.yandex {
+      background: #303030;
+      &:after {
+        content: '\f19e';
+        color: red;
+      }
+    }
+    &.active {
+      background: gray;
+      &:after {
+        color: #fff;
+      }
+    }
+  }
+  @content;
+}

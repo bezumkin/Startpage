@@ -1,0 +1,26 @@
+.search-wrapper {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin: auto;
+  #search-form {
+    width: 100%;
+    margin-left: 10px;
+  }
+  .show > .dropdown-menu {
+    display: block;
+  }
+  .dropdown-item {
+    cursor: pointer;
+    &:active {
+      background: #efefef;
+    }
+  }
+  @include media-breakpoint-down(md) {
+    width: 80%;
+    margin: auto;
+  }
+  @include media-breakpoint-down(sm) {
+    width: 100%;
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "private": true,
+  "scripts": {
+    "prod": "gulp --production",
+    "dev": "gulp watch"
+  },
+  "dependencies": {
+    "alertifyjs": "1.*",
+    "autocomplete-js": "2.6.*",
+    "backbone": "1.*",
+    "backbone.syphon": "0.*",
+    "bootstrap": "github:twbs/bootstrap#v4-dev",
+    "font-awesome": "4.*",
+    "html5sortable": "0.6.*",
+    "jquery": "3.*",
+    "js-cookie": "2.*",
+    "requirejs": "2.*",
+    "select2": "4.0.*",
+    "tether": "1.*"
+  },
+  "devDependencies": {
+    "gulp-chmod": "2.*",
+    "gulp-clean-css": "2.*",
+    "gulp-rename": "1.*",
+    "gulp-sass": "3.*",
+    "gulp-uglify": "2.*",
+    "lodash": "4.*",
+    "del": "2.*"
+  }
+}

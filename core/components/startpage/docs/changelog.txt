@@ -1,0 +1,5 @@
+Changelog for Startpage.
+
+1.0.0-pl
+==============
+- First version

@@ -1,0 +1,224 @@
+@import 'fonts';
+@import 'bootstrap/bootstrap';
+@import 'mixins';
+html {
+  font-size: 14px;
+  height: 100%;
+}
+body {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  & > section {
+    flex: 1 0 auto;
+  }
+}
+header {
+  color: #fff;
+  .header {
+    background: #000;
+    .container {
+      display: flex;
+      align-items: center;
+      height: 100%;
+      .logo, .hybridauth {
+        height: 100px;
+        width: 50%;
+      }
+      .logo {
+        font: normal 30px Arial;
+        line-height: 100px;
+      }
+      .hybridauth {
+        text-align: right;
+        display: flex;
+        align-items: center;
+        .login, .fullname {
+          font-size: 20px;
+          padding-right: 10px;
+        }
+        .providers {
+          width: 100%;
+          margin-left: 10px;
+        }
+        .avatar {
+          border-radius: 5px;
+          margin-right: 10px;
+        }
+        .profile {
+          display: flex;
+          align-items: center;
+          margin-left: auto;
+        }
+        a {
+          color: #fff;
+          text-decoration: none;
+          &.logout {
+            font-size: 30px;
+            &:hover {
+              opacity: .7;
+            }
+          }
+          &.profile {
+            .avatar {
+              max-width: 50px;
+              max-height: 50px;
+            }
+            &:hover {
+              .fullname { opacity: .7; }
+            }
+          }
+        }
+      }
+    }
+  }
+  .sub-header {
+    height: 50px;
+    line-height: 50px;
+    background: #222;
+    box-shadow: #000 0 0 5px;
+    color: #aaa;
+    .container {
+      display: flex;
+      .lang {
+        opacity: .5;
+        margin-left: auto;
+        &:hover {
+          opacity: 1;
+        }
+      }
+      a {
+        color: inherit;
+        font-weight: bold;
+      }
+    }
+  }
+}
+button {
+  &:focus, &:active {
+    outline: none;
+    box-shadow: none;
+  }
+  &.close {
+    cursor: pointer;
+  }
+}
+#main-section {
+  padding: 20px 0;
+}
+footer {
+  color: #999;
+  background: #000;
+  font-size: 12px;
+  box-shadow: #000 0 0 5px;
+  .container {
+    min-height: 50px;
+    display: flex;
+    align-items: center;
+    a { color: #fff; }
+    small { display: block; }
+    .logos { margin-left: auto; }
+  }
+}
+.providers {
+  @include providers;
+}
+form {
+  &#profile-form {
+    margin-bottom: 30px;
+  }
+  .buttons {
+    display: flex;
+    justify-content: space-between;
+    button:not(:disabled) {
+      cursor: pointer;
+    }
+  }
+}
+small {
+  padding-top: 5px;
+  display: block;
+  line-height: 16px;
+  color: #777;
+}
+form {
+  button {
+    cursor: pointer;
+    .fa { opacity: .7; }
+    &:hover {
+      .fa { opacity: 1; }
+    }
+    &.alone, &[type="reset"] {
+      border-top-right-radius: .25rem !important;
+      border-bottom-right-radius: .25rem !important;
+      border-right: 1px solid rgba(0, 0, 0, .15) !important;
+    }
+  }
+}
+// --
+@include media-breakpoint-down(md) {
+  header {
+    .header {
+      .container {
+        flex-wrap: wrap;
+        .logo, .hybridauth {
+          height: 50px;
+          width: 100%;
+          text-align: center;
+        }
+        .logo {
+          line-height: 50px;
+        }
+        .hybridauth {
+          margin: 10px 0;
+          .logout {
+            margin-right: auto;
+          }
+        }
+      }
+    }
+  }
+}
+@include media-breakpoint-down(sm) {
+  header {
+    .hybridauth {
+      .login { display: none; }
+    }
+  }
+  footer {
+    .container {
+      flex-wrap: wrap;
+      .copy, .logos {
+        width: 100%;
+        text-align: center;
+      }
+      .copy {
+        margin-top: 10px;
+      }
+      .logos {
+        margin: 10px 0;
+      }
+    }
+  }
+}
+@media (max-width: 380px) {
+  header {
+    .header {
+      .container {
+        .hybridauth {
+          .login, .fullname {
+            font-size: 18px;
+            padding-right: 10px;
+          }
+          a.logout {
+            font-size: 24px;
+          }
+        }
+      }
+    }
+  }
+}
+@import "components/alertify";
+@import "components/autocomplete";
+@import "components/links";
+@import "components/links-header";

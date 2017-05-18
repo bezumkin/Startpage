@@ -1,0 +1,518 @@
+.alertify {
+  .ajs-dimmer {
+    position: fixed;
+    z-index: 1981;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 0;
+    margin: 0;
+    //background-color: #000;
+    background-color: $modal-backdrop-bg;
+    opacity: .82;
+
+  }
+
+  .ajs-modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    padding: 0;
+    overflow-y: auto;
+    z-index: 1981;
+  }
+
+  .ajs-dialog {
+    position: relative;
+    margin: 5% auto;
+    max-width: 400px;
+    @media (max-width: 400px) {
+      max-width: 99%;
+    }
+    outline: 0;
+    border-radius: 5px;
+    border: 5px solid rgba(0, 0, 0, .12);
+    box-shadow: 0 3px 7px rgba(0, 0, 0, .32);
+    background: $modal-backdrop-bg;
+
+    &.ajs-capture:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      display: block;
+      z-index: 1;
+    }
+  }
+
+  .ajs-commands, .ajs-header, .ajs-reset {
+    display: none;
+  }
+
+  .ajs-body {
+    min-height: 40px;
+    background: #fff;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    padding: 30px 30px 0 30px;
+    p:last-child {
+      margin-bottom: 0;
+    }
+    .ajs-content { line-height: 1.4em; }
+  }
+
+  .ajs-footer {
+    padding: 10px 30px 30px 30px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    background: #fff;
+    .ajs-buttons {
+      display: flex;
+      @media (min-width: 401px) {
+        justify-content: space-between;
+      }
+      @media (max-width: 400px) {
+        flex-flow: column;
+        .ajs-button {
+          width: 100%;
+          margin-top: 10px;
+          &:first-child { margin-top: 0; }
+        }
+      }
+      .ajs-button {
+        text-align: center;
+        min-width: 100px;
+        cursor: pointer;
+        font-size: 16px;
+      }
+    }
+  }
+
+  // pass overflow control to the content
+  &.ajs-no-overflow {
+    .ajs-body {
+      .ajs-content {
+        overflow: hidden !important;
+      }
+    }
+  }
+  // pass padding control to the content
+  &.ajs-no-padding {
+    &.ajs-maximized {
+      .ajs-body {
+        .ajs-content {
+          left: 0;
+          right: 0;
+          padding: 0;
+        }
+      }
+    }
+
+    &:not(.ajs-maximized) {
+      .ajs-body {
+        margin-left: -24px;
+        margin-right: -24px;
+
+        .ajs-content {
+          padding: 0;
+        }
+      }
+    }
+
+    &.ajs-resizable {
+      .ajs-body {
+        .ajs-content {
+          left: 0;
+          right: 0;
+        }
+      }
+    }
+  }
+  // has maximize box
+  &.ajs-maximizable {
+    .ajs-commands {
+      button {
+        &.maximize, &.ajs-restore {
+          display: inline-block;
+        }
+      }
+    }
+  }
+  // has close box
+  &.ajs-closable {
+    .ajs-commands {
+      button {
+        &.ajs-close {
+          display: inline-block;
+        }
+      }
+    }
+  }
+  // maximizes the dialog
+  &.ajs-maximized {
+    .ajs-dialog {
+      width: 100% !important;
+      height: 100% !important;
+      max-width: none !important;
+      margin: 0 auto !important;
+      top: 0 !important;
+      left: 0 !important;
+    }
+
+    &.ajs-modeless .ajs-modal {
+      position: fixed !important;
+      min-height: 100% !important;
+      max-height: none !important;
+      margin: 0 !important;
+    }
+
+    .ajs-commands {
+      button {
+        &.ajs-maximize {
+          background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEgAACxIB0t1+/AAAABZ0RVh0Q3JlYXRpb24gVGltZQAwNy8xMy8xNOrZqugAAAAcdEVYdFNvZnR3YXJlAEFkb2JlIEZpcmV3b3JrcyBDUzbovLKMAAAASklEQVQYlZWQ0QkAMQhDtXRincOZX78KVtrDCwgqJNEoIB3MPLj7lRUROlpyVXGzby6zWuY+kz6tj5sBMTMAyVV3/595RbOh3cAXsww1raeiOcoAAAAASUVORK5CYII=);
+        }
+      }
+    }
+  }
+  // resizable  dialog
+  &.resizable, &.ajs-maximized {
+
+    .ajs-dialog {
+      padding: 0;
+    }
+
+    .ajs-commands {
+      margin: 14px 24px 0 0;
+    }
+
+    .ajs-header {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      margin: 0;
+      padding: 16px 24px;
+    }
+
+    .ajs-body {
+      min-height: 224px;
+      display: inline-block;
+
+      .ajs-content {
+        position: absolute;
+        top: 50px;
+        right: 24px;
+        bottom: 50px;
+        left: 24px;
+        overflow: auto;
+      }
+    }
+
+    .ajs-footer {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: 0;
+    }
+  }
+
+  &.resizable:not(.ajs-maximized) {
+    .ajs-dialog {
+      //max-width + none resizable padding.
+      min-width: 548px;
+    }
+
+    .ajs-handle {
+      display: block;
+    }
+  }
+  // makes the dialog movable
+  &.movable:not(.ajs-maximized) {
+
+    .ajs-header {
+      cursor: move;
+    }
+  }
+  // makes the dilog modeless (non-modal)
+  &.ajs-modeless {
+
+    .dimmer, .ajs-reset {
+      display: none;
+    }
+
+    .ajs-modal {
+      overflow: visible;
+      max-width: none;
+      max-height: 0;
+    }
+    // has pin box
+    &.ajs-pinnable {
+      .ajs-commands {
+        button {
+          &.ajs-pin {
+            display: inline-block;
+            background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEgAACxIB0t1+/AAAABZ0RVh0Q3JlYXRpb24gVGltZQAwNy8xMy8xNOrZqugAAAAcdEVYdFNvZnR3YXJlAEFkb2JlIEZpcmV3b3JrcyBDUzbovLKMAAAAQklEQVQYlcWPMQ4AIAwCqU9u38GbcbHRWN1MvKQDhQFMEpKImGJA0gCgnYw0V0rwxseg5erT4oSkQVI5d9f+e9+xA0NbLpWfitPXAAAAAElFTkSuQmCC);
+          }
+        }
+      }
+    }
+
+    &.ajs-unpinned {
+      .ajs-modal {
+        position: absolute;
+      }
+
+      .ajs-commands {
+        button {
+          &.ajs-pin {
+            background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEgAACxIB0t1+/AAAABZ0RVh0Q3JlYXRpb24gVGltZQAwNy8xMy8xNOrZqugAAAAcdEVYdFNvZnR3YXJlAEFkb2JlIEZpcmV3b3JrcyBDUzbovLKMAAAAO0lEQVQYlWP8//8/AzGAiShV6AqLi4txGs+CLoBLMYbC3t5eRmyaWfBZhwwYkX2NTxPRvibKjRhW4wMAhxkYGbLu3pEAAAAASUVORK5CYII=);
+          }
+        }
+      }
+    }
+
+    &:not(.ajs-unpinned) {
+      .ajs-body {
+        max-height: 500px;
+        overflow: auto;
+      }
+    }
+  }
+  //basic
+  &.ajs-basic {
+    .ajs-header {
+      opacity: 0;
+    }
+    .ajs-footer {
+      visibility: hidden;
+    }
+  }
+  //frameless
+  &.ajs-frameless {
+    .ajs-header {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      min-height: 60px;
+      margin: 0;
+      padding: 0;
+      opacity: 0;
+      z-index: 1;
+    }
+    .ajs-footer {
+      display: none;
+    }
+    .ajs-body {
+      .ajs-content {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+      }
+    }
+    &:not(.ajs-resizable) {
+      .ajs-dialog {
+        padding-top: 0;
+        .ajs-commands {
+          margin-top: 0;
+        }
+      }
+    }
+  }
+}
+//helpers
+//hides body overflow
+.ajs-no-overflow {
+  overflow: hidden !important;
+  outline: none;
+}
+//disables selection
+.no-selection, .no-selection * {
+  user-select: none;
+}
+@media screen and (max-width: 568px) {
+  .ajs-alertify {
+    .ajs-dialog {
+      min-width: 150px;
+    }
+
+    &:not(.ajs-maximized) {
+      .ajs-modal {
+        padding: 0 5%;
+      }
+
+      &.ajs-resizable {
+        .ajs-dialog {
+          min-width: initial;
+          min-width: auto /*IE fallback*/
+        ;
+        }
+      }
+    }
+  }
+}
+//fix FF missing outline
+@-moz-document url-prefix() {
+  .alertify {
+    button:focus {
+      outline: 1px dotted #3593d2;
+    }
+  }
+}
+// transition
+.alertify {
+  // setup
+  .ajs-dimmer, .ajs-modal {
+    transform: translate3d(0, 0, 0);
+    transition-property: opacity, visibility;
+    transition-timing-function: linear;
+    transition-duration: 250ms;
+  }
+
+  &.ajs-hidden {
+    .ajs-dimmer, .ajs-modal {
+      visibility: hidden;
+      opacity: 0;
+    }
+  }
+  //in
+  &.ajs-in:not(.ajs-hidden) {
+    .ajs-dialog {
+      animation-duration: 500ms;
+    }
+  }
+  //out
+  &.ajs-out.ajs-hidden {
+    .ajs-dialog {
+      animation-duration: 250ms;
+    }
+  }
+
+  // fade
+  &.ajs-fade {
+    //in
+    &.ajs-in:not(.ajs-hidden) {
+      .ajs-dialog {
+        animation-name: ajs-fadeIn;
+      }
+    }
+    //out
+    &.ajs-out.ajs-hidden {
+      .ajs-dialog {
+        animation-name: ajs-fadeOut;
+      }
+    }
+  }
+}
+@keyframes ajs-fadeIn {
+  0% {
+    opacity: 0;
+    margin-top: 0;
+  }
+
+  100% {
+    opacity: 1;
+    margin-top: 5%;
+  }
+}
+@keyframes ajs-fadeOut {
+  0% {
+    opacity: 1;
+    margin-top: 5%;
+  }
+
+  100% {
+    opacity: 0;
+    margin-top: 0;
+  }
+}
+/***************
+ Notifier
+***************/
+
+.alertify-notifier {
+  position: fixed;
+  width: 0;
+  overflow: visible;
+  z-index: 1982;
+  transform: translate3d(0, 0, 0);
+  line-height: 1.4em;
+
+  .ajs-message {
+    position: relative;
+    width: 260px;
+    max-height: 0;
+    padding: 0;
+    opacity: 0;
+    margin: 0;
+    transform: translate3d(0, 0, 0);
+    transition-duration: 250ms;
+    transition-timing-function: linear;
+    text-align: center;
+    border-radius: 5px;
+
+    &.ajs-visible {
+      transition-duration: 500ms;
+      transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1.275);
+      opacity: 1;
+      max-height: 100%;
+      padding: 15px;
+      margin-top: 10px;
+    }
+
+    &.ajs-success {
+      color: #fff;
+      background: rgba(0, 100, 0, .9);
+    }
+
+    &.ajs-failure {
+      color: #fff;
+      background: rgba(164, 42, 42, .9);
+    }
+
+    &.ajs-info {
+      color: #fff;
+      background: rgba(0, 0, 0, 0.9);
+    }
+  }
+
+  &.ajs-top {
+    top: 10px;
+  }
+
+  &.ajs-bottom {
+    bottom: 50px;
+  }
+
+  &.ajs-right {
+    right: 10px;
+
+    .ajs-message {
+      right: -320px;
+
+      &.ajs-visible {
+        right: 290px;
+      }
+    }
+  }
+
+  &.ajs-left {
+    left: 10px;
+
+    .ajs-message {
+      left: -300px;
+
+      &.ajs-visible {
+        left: 0;
+      }
+    }
+  }
+}
