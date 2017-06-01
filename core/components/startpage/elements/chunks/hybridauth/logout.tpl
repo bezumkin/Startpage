@@ -6,4 +6,4 @@
     {/if}
     <span class="fullname">{$fullname}</span>
 </a>
-<a href="{$logout_url}" class="logout" title="{$.en ? 'Logout' : 'Выход'}"><i class="fa fa-sign-out ">&nbsp;</i></a>
+<a href="{$logout_url}" class="logout" title="{$.en ? 'Logout' : 'Выход'}"><i class="fa fa-power-off ">&nbsp;</i></a>
