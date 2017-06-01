@@ -14,7 +14,6 @@ requirejs.config({
         cookies: 'lib/js.cookie.min',
         sortable: 'lib/html.sortable.min',
         autocomplete: 'lib/autocomplete.min',
-        select2: 'lib/select2.min',
     },
     shim: {
         bootstrap: {

@@ -15,7 +15,6 @@
     "jquery": "3.*",
     "js-cookie": "2.*",
     "requirejs": "2.*",
-    "select2": "4.0.*",
     "tether": "1.*"
   },
   "devDependencies": {
