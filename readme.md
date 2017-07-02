@@ -31,7 +31,7 @@ mkdir ~/www/assets/components/startpage && mkdir ~/www/core/components/startpage
 4. Make symlinks
 ```
 ln -s ~/www/assets/components/startpage ~/www/Extras/Startpage/assets/components/
-ln -s ~/www/core/components/startpage ~/www/Extras/Startpage/core/components/startpage
+ln -s ~/www/core/components/startpage ~/www/Extras/Startpage/core/components/
 ```
 5. Upload sources into the `Extras` directory in the root of new website
 6. Install package by running `http://yoursite.com/Extras/Startpage/_build/build.transport.php`
@@ -44,6 +44,7 @@ If you are using `sources` install, you can edit them and compile with **Gulp**.
 
 Install libs
 `npm install --prefix ~/www/Extras/Startpage/_build/`
+`npm link gulp`
 
 Copy libs into site root
 `gulp copy --gulpfile ~/www/Extras/Startpage/_build/gulpfile.js`

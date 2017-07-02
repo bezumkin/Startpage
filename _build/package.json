@@ -9,7 +9,7 @@
     "autocomplete-js": "2.6.*",
     "backbone": "1.*",
     "backbone.syphon": "0.*",
-    "bootstrap": "github:twbs/bootstrap#v4-dev",
+    "bootstrap": "github:twbs/bootstrap#a60542cf1565441617f58716e394cfe8496c62d5",
     "font-awesome": "4.*",
     "html5sortable": "0.6.*",
     "jquery": "3.*",
