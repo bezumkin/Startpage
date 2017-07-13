@@ -19,7 +19,7 @@
 
     <div class="buttons">
         <button type="submit" class="btn btn-outline-primary">{$.en ? 'Save' : 'Сохранить'}</button>
-        <button class="btn btn-outline-secondary" data-dismiss="modal">{$.en ? 'Cancel' : 'Отмены'}</button>
+        <button class="btn btn-outline-secondary" data-dismiss="modal">{$.en ? 'Cancel' : 'Отмена'}</button>
     </div>
 </form>
 
