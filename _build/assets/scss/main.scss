@@ -105,6 +105,10 @@ button {
 }
 #main-section {
   padding: 20px 0;
+  @media (max-width: 575px) {
+    padding-right: 10px;
+    padding-left: 10px;
+  }
 }
 footer {
   color: #999;
