@@ -9,7 +9,7 @@ $_lang['sp_menu_desc'] = 'Управление домашней странице
 
 $_lang['provider_facebook'] = 'Facebook';
 $_lang['provider_google'] = 'Google';
-$_lang['provider_twitter'] = 'Twitter';
+$_lang['provider_github'] = 'GitHub';
 $_lang['provider_vkontakte'] = 'Вконтакте';
 $_lang['provider_yandex'] = 'Яндекс';
 
